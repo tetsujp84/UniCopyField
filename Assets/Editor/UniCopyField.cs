@@ -32,9 +32,13 @@ public class UniCopyField : EditorWindow
     {
         if(fromType == typeof(MonoBehaviour)) return;
         foreach(var from in fromType.GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)) {
-            var other = fromType.GetField(from.Name, BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy);
+            var other = fromType.GetField(from.Name, BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
             if((other != null)) {
-                other.SetValue(toObj, from.GetValue(fromObj));
+                try {
+                    other.SetValue(toObj, from.GetValue(fromObj));
+                } catch(Exception e) {
+                    Debug.Log(e);
+                }
             }
         }
         // fromの親クラスからコピー
