@@ -12,3 +12,5 @@
 ## Example
 基底クラスCommonはメンバ変数をいくつか持つ。
 Commonを継承したAとB間のメンバ変数のコピーを行う。
+![result](https://github.com/tetsujp84/UniCopyField/blob/add-gif/copygif.gif)
+
