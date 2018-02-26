@@ -4,18 +4,18 @@ using UnityEditor;
 using UnityEngine;
 
 /// <summary>
-/// プロパティのコピーを行う
+/// メンバ変数のコピーを行う
 /// EditorWindowでコピー元とコピー先のコンポーネントを指定する
 /// </summary>
-public class UniCopyProperty : EditorWindow
+public class UniCopyField : EditorWindow
 {
     private UnityEngine.Object fromObj;
     private UnityEngine.Object toObj;
 
-    [MenuItem("Window/CopyComponentProperty")]
+    [MenuItem("Window/ComponentFieldCopyer")]
     private static void OpenWindow()
     {
-        EditorWindow.GetWindow<UniCopyProperty>("CopyComponentProperty");
+        EditorWindow.GetWindow<UniCopyField>("ComponentFieldCopyer");
     }
 
     void OnGUI()

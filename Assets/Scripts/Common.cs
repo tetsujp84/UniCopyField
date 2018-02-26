@@ -2,7 +2,7 @@
 
 /// <summary>
 /// 基底クラス
-/// private, protected, public全てのプロパティをコピーする
+/// private, protected, publicのメンバ変数全てをコピーする
 /// </summary>
 public class Common : MonoBehaviour
 {
